@@ -19,7 +19,8 @@ function App() {
     if (token) {
       setAuthToken(token);
 
-      axios.get('http://localhost:8081/api/auth/me', {
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8081';
+      axios.get(`${apiUrl}/api/auth/me`, {
         headers: { 'Authorization': token }
       })
         .then(() => {

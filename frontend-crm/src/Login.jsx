@@ -19,7 +19,8 @@ function Login({ onLogin }) {
         const token = 'Basic ' + window.btoa(username + ":" + password);
 
         try {
-            await axios.get('http://localhost:8081/api/auth/me', {
+            const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8081';
+            await axios.get(`${apiUrl}/api/auth/me`, {
                 headers: { 'Authorization': token }
             });
             onLogin(token);
