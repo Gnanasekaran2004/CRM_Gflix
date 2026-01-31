@@ -1,7 +1,7 @@
 import React from "react";
 import {
     Navbar,
-    MobileNav,
+    Collapse,
     Typography,
     Button,
     IconButton,
@@ -76,7 +76,7 @@ export default function StickyNavbar({ onLogout }) {
                     <div className="flex items-center gap-4">
                         <div className="mr-4 hidden lg:block">{navList}</div>
                         <div className="flex items-center gap-x-1">
-                            {/* Theme Toggle Button */}
+
                             <IconButton variant="text" onClick={toggleTheme} color={theme === 'dark' ? 'white' : 'blue-gray'}>
                                 {theme === 'dark' ? (
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -137,7 +137,7 @@ export default function StickyNavbar({ onLogout }) {
                         </IconButton>
                     </div>
                 </div>
-                <MobileNav open={openNav} className="dark:bg-gray-900">
+                <Collapse open={openNav} className="dark:bg-gray-900">
                     {navList}
                     <div className="flex items-center gap-x-1">
                         <Button fullWidth variant="text" onClick={toggleTheme} className="flex items-center justify-center gap-2 dark:text-blue-400">
@@ -147,7 +147,7 @@ export default function StickyNavbar({ onLogout }) {
                             <span>Log Out</span>
                         </Button>
                     </div>
-                </MobileNav>
+                </Collapse>
             </Navbar>
         </div>
     );
