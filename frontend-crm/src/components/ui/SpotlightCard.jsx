@@ -20,7 +20,6 @@ const SpotlightCard = ({ children, className = '', spotlightColor = 'rgba(255, 2
     const handleMouseEnter = () => { setOpacity(0.6); };
     const handleMouseLeave = () => { setOpacity(0); };
 
-    // Light Mode: Return simple card without event listeners
     if (theme === 'light') {
         return (
             <div className={`relative rounded-3xl border border-gray-200 bg-white p-8 shadow-sm ${className}`}>
@@ -29,7 +28,6 @@ const SpotlightCard = ({ children, className = '', spotlightColor = 'rgba(255, 2
         );
     }
 
-    // Dark Mode: Return full spotlight card
     return (
         <div
             ref={divRef}

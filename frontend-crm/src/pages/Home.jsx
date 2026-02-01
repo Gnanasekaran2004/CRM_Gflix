@@ -69,8 +69,6 @@ const Home = () => {
     const getUsername = () => {
         const storedName = localStorage.getItem('username');
         if (storedName) return storedName;
-
-        // Fallback: Try to decode from Basic Auth token
         const token = localStorage.getItem('authToken');
         if (token && token.startsWith('Basic ')) {
             try {

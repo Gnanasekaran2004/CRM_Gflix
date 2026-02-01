@@ -4,7 +4,6 @@ const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
     const [theme, setTheme] = useState(() => {
-        // Check localStorage or system preference on initial load
         if (localStorage.getItem('theme')) {
             return localStorage.getItem('theme');
         }
@@ -13,12 +12,8 @@ export const ThemeProvider = ({ children }) => {
 
     useEffect(() => {
         const root = window.document.documentElement;
-
-        // Remove the old class and add the new one
         root.classList.remove('light', 'dark');
         root.classList.add(theme);
-
-        // Persist to localStorage
         localStorage.setItem('theme', theme);
     }, [theme]);
 
