@@ -52,7 +52,6 @@ public class SecurityConfig {
                 "http://localhost:5174",
                 "http://127.0.0.1:5173",
                 "http://127.0.0.1:5174",
-                "https://crm-frontend-5q7i.onrender.com",
                 "https://crm-admin-d1di.onrender.com",
                 "https://gflix-app.onrender.com"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
