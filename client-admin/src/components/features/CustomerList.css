@@ -1,10 +1,17 @@
+/* Glass Effect Overrides */
 .list-container {
     overflow: hidden;
+    background: rgba(255, 255, 255, 0.05) !important; /* Glass background */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    color: var(--text-primary);
 }
 
 .list-header {
     padding: 1.5rem;
-    border-bottom: 1px solid var(--border-light);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Glass border */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -13,16 +20,18 @@
 
 .list-header h3 {
     font-size: 1.25rem;
-    color: var(--text-primary);
+    color: var(--text-primary); /* Inherit or use variable */
 }
 
+/* Glass Badge */
 .badge {
-    background-color: var(--primary-50);
+    background: rgba(59, 130, 246, 0.2); /* Semi-transparent blue */
     padding: 0.25rem 0.75rem;
     border-radius: var(--radius-full);
     font-size: 0.75rem;
     font-weight: 600;
-    color: var(--primary-700);
+    color: #60a5fa; /* Light blue text */
+    border: 1px solid rgba(59, 130, 246, 0.3);
 }
 
 .table-wrapper {
@@ -36,23 +45,23 @@
 }
 
 .customer-table th {
-    background-color: var(--gray-50);
+    background-color: rgba(255, 255, 255, 0.03); /* Subtle header bg */
     padding: 1rem 1.5rem;
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--text-secondary);
-    border-bottom: 1px solid var(--border-light);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .customer-table td {
     padding: 1rem 1.5rem;
     font-size: 0.875rem;
     color: var(--text-primary);
-    border-bottom: 1px solid var(--border-light);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle separation */
     vertical-align: middle;
-    transition: background-color var(--duration-fast);
+    transition: background-color 0.2s ease;
 }
 
 .customer-table tr:last-child td {
@@ -60,27 +69,28 @@
 }
 
 .customer-table tr:hover td {
-    background-color: var(--gray-50);
+    background-color: rgba(255, 255, 255, 0.08); /* Hover effect */
 }
 
 .id-cell {
     font-family: 'Monaco', 'Consolas', monospace;
-    color: var(--text-tertiary);
+    opacity: 0.7;
     font-size: 0.75rem;
 }
 
 .company-tag {
     display: inline-flex;
     padding: 0.25rem 0.75rem;
-    background-color: var(--primary-50);
-    color: var(--primary-700);
+    background: rgba(16, 185, 129, 0.2); /* Semi-transparent green */
+    color: #34d399; /* Light green text */
     border-radius: var(--radius-full);
     font-size: 0.75rem;
     font-weight: 600;
+    border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
 .text-secondary {
-    color: var(--text-secondary);
+    opacity: 0.7;
 }
 
 .font-medium {
@@ -91,13 +101,12 @@
     text-align: right;
 }
 
-
 .empty-state {
     text-align: center;
     padding: 4rem 2rem;
-    color: var(--text-tertiary);
+    color: rgba(255, 255, 255, 0.5);
     font-style: italic;
-    background-color: var(--gray-50);
+    background-color: transparent;
 }
 
 .filter-bar {

@@ -20,13 +20,15 @@ const SpotlightCard = ({ children, className = '', spotlightColor = 'rgba(255, 2
     const handleMouseEnter = () => { setOpacity(0.6); };
     const handleMouseLeave = () => { setOpacity(0); };
 
-    if (theme === 'light') {
-        return (
-            <div className={`relative rounded-3xl border border-gray-200 bg-white p-8 shadow-sm ${className}`}>
-                {children}
-            </div>
-        );
-    }
+    const isLight = theme === 'light';
+    const baseClasses = isLight
+        ? 'border-gray-100 bg-white/80 backdrop-blur-xl shadow-sm hover:shadow-md'
+        : 'border-neutral-800 bg-neutral-900';
+
+    // Default spotlight adjustment: White on light bg is invisible, so switch to subtle gray if default is used
+    const finalSpotlightColor = (isLight && spotlightColor === 'rgba(255, 255, 255, 0.25)')
+        ? 'rgba(0, 0, 0, 0.04)'
+        : spotlightColor;
 
     return (
         <div
@@ -36,13 +38,13 @@ const SpotlightCard = ({ children, className = '', spotlightColor = 'rgba(255, 2
             onBlur={handleBlur}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className={`relative rounded-3xl border border-neutral-800 bg-neutral-900 overflow-hidden p-8 ${className}`}
+            className={`relative rounded-3xl border overflow-hidden p-8 transition-shadow duration-300 ${baseClasses} ${className}`}
         >
             <div
                 className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out"
                 style={{
                     opacity,
-                    background: `radial-gradient(circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 80%)`
+                    background: `radial-gradient(circle at ${position.x}px ${position.y}px, ${finalSpotlightColor}, transparent 80%)`
                 }}
             />
             {children}
