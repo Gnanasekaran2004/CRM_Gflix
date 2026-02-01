@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import API_URL from '../config';
 
 const RequestAccess = () => {
     const [formData, setFormData] = useState({
@@ -11,11 +12,9 @@ const RequestAccess = () => {
         company: '',
         password: ''
     });
-    const [status, setStatus] = useState('idle'); // idle, loading, success, error
+    const [status, setStatus] = useState('idle');
     const [errorMsg, setErrorMsg] = useState('');
     const navigate = useNavigate();
-
-    import API_URL from '../config';
 
     const apiBaseUrl = API_URL;
 
