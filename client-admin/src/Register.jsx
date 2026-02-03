@@ -107,6 +107,9 @@ function Register({ onRegister }) {
                         <form onSubmit={handleSubmit}>
                             <Input
                                 label="Username"
+                                name="username"
+                                id="username"
+                                autoComplete="username"
                                 placeholder="Choose a username"
                                 value={username}
                                 onChange={e => setUsername(e.target.value)}
@@ -115,6 +118,9 @@ function Register({ onRegister }) {
                             <Input
                                 label="Password"
                                 type="password"
+                                name="password"
+                                id="password"
+                                autoComplete="new-password"
                                 placeholder="••••••••"
                                 value={password}
                                 onChange={e => setPassword(e.target.value)}
@@ -123,6 +129,9 @@ function Register({ onRegister }) {
                             <Input
                                 label="Confirm Password"
                                 type="password"
+                                name="confirmPassword"
+                                id="confirmPassword"
+                                autoComplete="new-password"
                                 placeholder="••••••••"
                                 value={confirmPassword}
                                 onChange={e => setConfirmPassword(e.target.value)}

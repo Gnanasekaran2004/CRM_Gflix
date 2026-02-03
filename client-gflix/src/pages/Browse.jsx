@@ -41,7 +41,11 @@ const Browse = () => {
                     <div className="relative hidden sm:block">
                         <Search className="absolute left-2 top-1.5 w-5 h-5 text-gray-400" />
                         <input
+                            id="search"
+                            name="search"
                             type="text"
+                            autoComplete="off"
+                            aria-label="Search"
                             placeholder="Titles, people, genres"
                             className="bg-black/50 border border-gray-500 text-white text-sm pl-9 pr-4 py-1.5 rounded focus:outline-none focus:border-white transition-all w-32 focus:w-64"
                             value={searchTerm}
@@ -58,11 +62,11 @@ const Browse = () => {
                 </div>
             </nav>
 
-            
+
             {!searchTerm && (
                 <div className="relative h-[70vh] md:h-[80vh] w-full">
                     <img
-                        src="https://occ-0-2794-2219.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABSpjhXw2b4wbdk3w8_q5K0b_-21y7-0741d4c7-10e1-40af-bcae-07a3f8dc141a.jpg?r=298"
+                        src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=2070&auto=format&fit=crop"
                         className="w-full h-full object-cover brightness-[0.6]"
                         alt="Hero"
                     />

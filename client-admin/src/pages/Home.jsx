@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import CustomerForm from '../components/features/CustomerForm';
 import CustomerList from '../components/features/CustomerList';
+import BroadcastPanel from '../components/features/BroadcastPanel';
 import SpotlightCard from '../components/ui/SpotlightCard';
 import { motion } from 'framer-motion';
 import API_URL from '../config';
@@ -128,6 +129,9 @@ const Home = () => {
 
 
                 <div style={{ position: 'sticky', top: '5rem' }}>
+                    <div className="mb-8">
+                        <BroadcastPanel />
+                    </div>
                     <CustomerForm
                         formData={formData}
                         handleChange={handleChange}

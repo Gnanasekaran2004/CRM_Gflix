@@ -124,6 +124,9 @@ function Login({ onLogin }) {
                     <form onSubmit={handleSubmit}>
                         <Input
                             label="Username"
+                            name="username"
+                            id="username"
+                            autoComplete="username"
                             placeholder="Enter your username"
                             value={username}
                             onChange={e => setUsername(e.target.value)}
@@ -132,6 +135,9 @@ function Login({ onLogin }) {
                         <Input
                             label="Password"
                             type="password"
+                            name="password"
+                            id="password"
+                            autoComplete="current-password"
                             placeholder="••••••••"
                             value={password}
                             onChange={e => setPassword(e.target.value)}

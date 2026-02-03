@@ -32,12 +32,20 @@ public class CustomerAuthController {
             return new ResponseEntity<>("Email and password are required", HttpStatus.BAD_REQUEST);
         }
 
+        System.out.println("Debug: Attempting login for email: " + email);
         Optional<Customer> customerOpt = customerRepository.findByEmail(email);
 
         if (customerOpt.isPresent()) {
             Customer customer = customerOpt.get();
-            if (passwordEncoder.matches(password, customer.getPassword())) {
-                
+            System.out.println("Debug: Customer found - " + customer.getEmail());
+            System.out.println("Debug: Input Password - " + password);
+            System.out.println("Debug: Stored Password - " + customer.getPassword());
+
+            boolean match = passwordEncoder.matches(password, customer.getPassword());
+            System.out.println("Debug: Password Match - " + match);
+
+            if (match) {
+
                 String token = "Basic " + Base64.getEncoder().encodeToString((email + ":" + password).getBytes());
 
                 Map<String, String> response = new HashMap<>();

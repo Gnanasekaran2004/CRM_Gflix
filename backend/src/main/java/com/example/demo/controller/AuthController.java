@@ -15,6 +15,7 @@ import java.util.Map;
 public class AuthController {
 
     private final com.example.demo.repository.UserRepository userRepository;
+
     private final org.springframework.security.crypto.password.PasswordEncoder passwordEncoder;
 
     public AuthController(com.example.demo.repository.UserRepository userRepository,

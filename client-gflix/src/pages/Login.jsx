@@ -43,16 +43,24 @@ const Login = () => {
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                     <input
+                        id="email"
+                        name="email"
                         type="email"
+                        autoComplete="email"
                         placeholder="Email"
+                        aria-label="Email Address"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
                         className="p-4 bg-[#333] rounded text-white placeholder-gray-500 focus:outline-none focus:bg-[#454545]"
                     />
                     <input
+                        id="password"
+                        name="password"
                         type="password"
+                        autoComplete="current-password"
                         placeholder="Password"
+                        aria-label="Password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
@@ -68,8 +76,14 @@ const Login = () => {
                 </form>
 
                 <div className="mt-4 flex justify-between text-gray-400 text-sm">
-                    <label className="flex items-center gap-1 cursor-pointer">
-                        <input type="checkbox" className="w-4 h-4 bg-[#333] border-0 rounded-sm" /> Remember me
+                    <label htmlFor="rememberMe" className="flex items-center gap-1 cursor-pointer">
+                        <input
+                            id="rememberMe"
+                            name="rememberMe"
+                            type="checkbox"
+                            className="w-4 h-4 bg-[#333] border-0 rounded-sm"
+                            aria-label="Remember me"
+                        /> Remember me
                     </label>
                     <a href="#" className="hover:underline">Need help?</a>
                 </div>

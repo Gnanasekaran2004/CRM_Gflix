@@ -4,6 +4,7 @@ import { AuthProvider, useAuth } from './contexts/AuthContext';
 import Login from './pages/Login';
 import RequestAccess from './pages/RequestAccess';
 import Browse from './pages/Browse';
+import NotificationToast from './components/NotificationToast';
 
 const ProtectedRoute = ({ children }) => {
   const { token, isLoading } = useAuth();
@@ -19,6 +20,7 @@ const ProtectedRoute = ({ children }) => {
 function App() {
   return (
     <AuthProvider>
+      <NotificationToast />
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />

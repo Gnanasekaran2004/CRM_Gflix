@@ -76,43 +76,58 @@ const RequestAccess = () => {
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                     <input
+                        id="name"
                         type="text"
                         name="name"
+                        autoComplete="name"
                         placeholder="Full Name"
+                        aria-label="Full Name"
                         value={formData.name}
                         onChange={handleChange}
                         required
                         className="p-4 bg-[#333] rounded text-white placeholder-gray-500 focus:outline-none focus:bg-[#454545]"
                     />
                     <input
+                        id="email"
                         type="email"
                         name="email"
+                        autoComplete="email"
                         placeholder="Email Address"
+                        aria-label="Email Address"
                         value={formData.email}
                         onChange={handleChange}
                         required
                         className="p-4 bg-[#333] rounded text-white placeholder-gray-500 focus:outline-none focus:bg-[#454545]"
                     />
                     <input
+                        id="phone"
                         type="tel"
                         name="phone"
+                        autoComplete="tel"
                         placeholder="Phone Number"
+                        aria-label="Phone Number"
                         value={formData.phone}
                         onChange={handleChange}
                         className="p-4 bg-[#333] rounded text-white placeholder-gray-500 focus:outline-none focus:bg-[#454545]"
                     />
                     <input
+                        id="company"
                         type="text"
                         name="company"
+                        autoComplete="organization"
                         placeholder="Company (Optional)"
+                        aria-label="Company Name"
                         value={formData.company}
                         onChange={handleChange}
                         className="p-4 bg-[#333] rounded text-white placeholder-gray-500 focus:outline-none focus:bg-[#454545]"
                     />
                     <input
+                        id="password"
                         type="password"
                         name="password"
+                        autoComplete="new-password"
                         placeholder="Desired Password"
+                        aria-label="Desired Password"
                         value={formData.password}
                         onChange={handleChange}
                         required

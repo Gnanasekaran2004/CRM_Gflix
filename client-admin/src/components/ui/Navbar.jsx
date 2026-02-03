@@ -8,6 +8,7 @@ import {
 } from "@material-tailwind/react";
 import { Link, NavLink } from "react-router-dom";
 
+import NotificationCenter from "../features/NotificationCenter";
 import { useTheme } from "../../contexts/ThemeContext";
 
 export default function StickyNavbar({ onLogout }) {
@@ -86,6 +87,9 @@ export default function StickyNavbar({ onLogout }) {
                         <div className="mr-4 hidden lg:block">{navList}</div>
                         <div className="flex items-center gap-x-1">
 
+                            <div className="mr-2">
+                                <NotificationCenter />
+                            </div>
                             <IconButton variant="text" onClick={toggleTheme} color={theme === 'dark' ? 'white' : 'blue-gray'}>
                                 {theme === 'dark' ? (
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
