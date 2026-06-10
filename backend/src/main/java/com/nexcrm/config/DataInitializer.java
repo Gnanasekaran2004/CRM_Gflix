@@ -22,6 +22,11 @@ public class DataInitializer {
             PasswordEncoder passwordEncoder) {
 
         return args -> {
+            if (planRepository.count() > 0) {
+                System.out.println("Data already initialized. Skipping seed.");
+                return;
+            }
+
             // ==========================================
             // 1. Create Subscription Plans
             // ==========================================
