@@ -1,90 +1,55 @@
-import { Routes, Route } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import Navbar from './components/ui/Navbar';
-import Home from './pages/Home';
-import AllCustomers from './pages/AllCustomers';
-import About from './pages/About';
-import Contact from './pages/Contact';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import useAuthStore from './store/authStore';
+import Layout from './components/layout/Layout';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Dashboard from './pages/Dashboard';
+import Customers from './pages/Customers';
 import Requests from './pages/Requests';
-import Login from './Login';
-import Register from './Register';
+import Analytics from './pages/Analytics';
+import SupportTickets from './pages/SupportTickets';
+import Plans from './pages/Plans';
+import Settings from './pages/Settings';
+import './index.css';
 
-import { ThemeProvider } from './contexts/ThemeContext';
-import './App.css';
-import API_URL from './config';
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 1,
+      staleTime: 30000,
+    },
+  },
+});
+
+function ProtectedRoute({ children }) {
+  const { isAuthenticated } = useAuthStore();
+  return isAuthenticated ? children : <Navigate to="/login" replace />;
+}
+
+function PublicRoute({ children }) {
+  const { isAuthenticated } = useAuthStore();
+  return !isAuthenticated ? children : <Navigate to="/" replace />;
+}
 
 function App() {
-  const [authToken, setAuthToken] = useState(localStorage.getItem('authToken'));
-  const [customers, setCustomers] = useState([]);
-
-  useEffect(() => {
-    const token = localStorage.getItem('authToken');
-    if (token) {
-      setAuthToken(token);
-
-      const apiUrl = API_URL;
-      axios.get(`${apiUrl}/api/auth/me`, {
-        headers: { 'Authorization': token }
-      })
-        .then(() => {
-          console.log("Token is valid");
-        })
-        .catch((err) => {
-          console.error("Token invalid or backend unreachable", err);
-
-          localStorage.removeItem('authToken');
-          setAuthToken(null);
-        });
-    }
-  }, []);
-
-  const handleLogin = (token) => {
-    localStorage.setItem('authToken', token);
-    setAuthToken(token);
-  };
-
-  const handleLogout = () => {
-    localStorage.removeItem('authToken');
-    localStorage.removeItem('username');
-    setAuthToken(null);
-  };
-
-  if (!authToken) {
-    return (
-      <ThemeProvider>
-        <Routes>
-          <Route path="/register" element={<Register />} />
-          <Route path="*" element={<Login onLogin={handleLogin} />} />
-        </Routes>
-      </ThemeProvider>
-    );
-  }
-
-  const getHeaders = () => {
-    return { headers: { 'Authorization': authToken } };
-  };
-
   return (
-    <ThemeProvider>
-      <div className="app-layout dark:bg-gray-900 dark:text-white transition-colors duration-200">
-        <Navbar onLogout={handleLogout} />
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/customers" element={<AllCustomers />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/requests" element={<Requests />} />
-          </Routes>
-        </main>
-        <footer className="app-footer dark:bg-gray-800 dark:border-t dark:border-gray-700">
-          <div className="container">
-            <p>&copy; {new Date().getFullYear()} SparkCRM. All rights reserved.</p>
-          </div>
-        </footer>
-      </div>
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <Routes>
+        <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
+        <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
+        <Route path="/" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
+          <Route index element={<Dashboard />} />
+          <Route path="customers" element={<Customers />} />
+          <Route path="requests" element={<Requests />} />
+          <Route path="analytics" element={<Analytics />} />
+          <Route path="tickets" element={<SupportTickets />} />
+          <Route path="plans" element={<Plans />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </QueryClientProvider>
   );
 }
 
