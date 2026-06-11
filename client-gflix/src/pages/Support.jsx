@@ -43,9 +43,9 @@ export default function Support() {
   return (
     <div style={{ background: '#141414', minHeight: '100vh' }}>
       <header style={{ padding: '1.25rem 3rem', borderBottom: '1px solid rgba(255,255,255,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Link to="/browse" style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', textDecoration: 'none' }}>
-          <Tv size={22} color="#e50914" />
-          <span style={{ fontSize: '1.5rem', fontWeight: 900, color: '#e50914' }}>GFLIX</span>
+        <Link to="/browse" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
+          <img src="/logo.png" alt="PulseStream Logo" style={{ height: '24px' }} />
+          <span style={{ fontSize: '1.5rem', fontWeight: 900, color: '#e50914' }}>PulseStream</span>
         </Link>
         <Link to="/browse" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: '0.875rem' }}>
           <ArrowLeft size={16} /> Back

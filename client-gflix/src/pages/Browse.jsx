@@ -135,8 +135,8 @@ export default function Browse() {
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
           <Link to="/browse" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
-            <Tv size={22} color="#e50914" />
-            <span style={{ fontSize: '1.5rem', fontWeight: 900, color: '#e50914', letterSpacing: '-0.5px' }}>GFLIX</span>
+            <img src="/logo.png" alt="PulseStream Logo" style={{ height: '28px' }} />
+            <span style={{ fontSize: '1.5rem', fontWeight: 900, color: '#e50914', letterSpacing: '-0.5px' }}>PulseStream</span>
           </Link>
           <ul style={{ display: 'flex', gap: '1.5rem', listStyle: 'none', color: 'rgba(255,255,255,0.75)', fontSize: '0.9rem' }}>
             {['Home', 'Series', 'Films', 'New & Popular'].map(item => (

@@ -54,14 +54,14 @@ export default function RequestAccess() {
     <div style={{ minHeight: '100vh', background: '#141414' }}>
       <header style={{ padding: '1.5rem 3rem', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
         <Link to="/login" style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', textDecoration: 'none' }}>
-          <Tv size={26} color="#e50914" />
-          <span style={{ fontSize: '1.625rem', fontWeight: 900, color: '#e50914', letterSpacing: '-1px' }}>GFLIX</span>
+          <img src="/logo.png" alt="PulseStream Logo" style={{ height: '28px' }} />
+          <span style={{ fontSize: '1.625rem', fontWeight: 900, color: '#e50914', letterSpacing: '-1px' }}>PulseStream</span>
         </Link>
       </header>
 
       <div style={{ maxWidth: 600, margin: '0 auto', padding: '4rem 2rem' }}>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-          <h1 style={{ fontSize: '2.25rem', fontWeight: 900, marginBottom: '0.5rem' }}>Get Gflix Access</h1>
+          <h1 style={{ fontSize: '2.25rem', fontWeight: 900, marginBottom: '0.5rem' }}>Get PulseStream Access</h1>
           <p style={{ color: 'rgba(255,255,255,0.5)', marginBottom: '2.5rem', fontSize: '1.05rem' }}>
             Choose your plan and submit a request. Our team will review and activate your account.
           </p>

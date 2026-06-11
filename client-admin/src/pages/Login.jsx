@@ -60,7 +60,7 @@ export default function Login() {
             <Shield size={24} color="white" />
           </div>
           <div>
-            <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#f1f5f9' }}>NexCRM</div>
+            <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#f1f5f9' }}>PulseStream</div>
             <div style={{ fontSize: '0.75rem', color: '#6366f1', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase' }}>Admin Portal</div>
           </div>
         </div>

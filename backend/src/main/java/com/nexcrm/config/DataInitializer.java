@@ -155,7 +155,7 @@ public class DataInitializer {
             }
 
             System.out.println("\n====================================");
-            System.out.println("  NexCRM Data Seeded Successfully!");
+            System.out.println("  PulseStream Data Seeded Successfully!");
             System.out.println("  Admin Login: admin / admin123");
             System.out.println("  H2 Console:  http://localhost:8080/h2-console");
             System.out.println("====================================\n");

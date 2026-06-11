@@ -38,8 +38,8 @@ export default function GflixLogin() {
       {/* Header */}
       <header style={{ padding: '1.5rem 3rem', display: 'flex', alignItems: 'center' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
-          <Tv size={28} color="#e50914" />
-          <span style={{ fontSize: '1.875rem', fontWeight: 900, color: '#e50914', letterSpacing: '-1px' }}>GFLIX</span>
+          <img src="/logo.png" alt="PulseStream Logo" style={{ height: '36px' }} />
+          <span style={{ fontSize: '1.875rem', fontWeight: 900, color: '#e50914', letterSpacing: '-1px' }}>PulseStream</span>
         </div>
       </header>
 
@@ -106,7 +106,7 @@ export default function GflixLogin() {
           </form>
 
           <p style={{ textAlign: 'center', marginTop: '1.5rem', color: 'rgba(255,255,255,0.5)', fontSize: '0.9rem' }}>
-            New to Gflix?{' '}
+            New to PulseStream?{' '}
             <Link to="/request-access" style={{ color: '#fff', fontWeight: 600, textDecoration: 'none' }}>Request access</Link>
           </p>
         </motion.div>
