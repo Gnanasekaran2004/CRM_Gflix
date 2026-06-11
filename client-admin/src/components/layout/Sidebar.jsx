@@ -47,14 +47,7 @@ export default function Sidebar({ collapsed, onToggle, pendingCount = 0 }) {
     >
       {/* Logo */}
       <div style={{ padding: '1.5rem 1rem', borderBottom: '1px solid rgba(99, 102, 241, 0.1)', display: 'flex', alignItems: 'center', gap: '0.75rem', minHeight: '72px' }}>
-        <div style={{
-          width: 40, height: 40, borderRadius: '12px', flexShrink: 0,
-          background: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          boxShadow: '0 4px 12px rgba(99,102,241,0.4)'
-        }}>
-          <Shield size={20} color="white" />
-        </div>
+        <img src="/logo.png" alt="PulseStream Logo" style={{ width: 40, height: 40, borderRadius: 12, flexShrink: 0 }} />
         {!collapsed && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 }}>
             <div style={{ fontSize: '1.1rem', fontWeight: 800, color: '#f1f5f9', lineHeight: 1 }}>PulseStream</div>

@@ -51,14 +51,7 @@ export default function Login() {
       >
         {/* Logo */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.875rem', marginBottom: '2rem' }}>
-          <div style={{
-            width: 48, height: 48, borderRadius: 14,
-            background: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            boxShadow: '0 4px 20px rgba(99,102,241,0.4)',
-          }}>
-            <Shield size={24} color="white" />
-          </div>
+          <img src="/logo.png" alt="PulseStream Logo" style={{ width: 48, height: 48, borderRadius: 14 }} />
           <div>
             <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#f1f5f9' }}>PulseStream</div>
             <div style={{ fontSize: '0.75rem', color: '#6366f1', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase' }}>Admin Portal</div>
