@@ -86,8 +86,8 @@ export default function Support() {
                 <h2 style={{ fontSize: '1.5rem', fontWeight: 800, marginBottom: '0.75rem' }}>Ticket Submitted!</h2>
                 <p style={{ color: 'rgba(255,255,255,0.5)', marginBottom: '2rem' }}>Our support team will get back to you soon.</p>
                 <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-                  <button onClick={() => setSubmitted(false)} className="gflix-btn gflix-btn-ghost">Submit Another</button>
-                  <button onClick={() => { setActiveTab('history'); setSubmitted(false); }} className="gflix-btn gflix-btn-red">View My Tickets</button>
+                  <button onClick={() => setSubmitted(false)} className="pulse-btn pulse-btn-ghost">Submit Another</button>
+                  <button onClick={() => { setActiveTab('history'); setSubmitted(false); }} className="pulse-btn pulse-btn-red">View My Tickets</button>
                 </div>
               </motion.div>
             ) : (
@@ -100,32 +100,32 @@ export default function Support() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   <div>
                     <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>Subject</label>
-                    <input type="text" className="gflix-input" placeholder="Brief description of your issue" value={form.subject} onChange={e => setForm(p => ({ ...p, subject: e.target.value }))} />
+                    <input type="text" className="pulse-input" placeholder="Brief description of your issue" value={form.subject} onChange={e => setForm(p => ({ ...p, subject: e.target.value }))} />
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                     <div>
                       <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>Category</label>
-                      <select className="gflix-input" value={form.category} onChange={e => setForm(p => ({ ...p, category: e.target.value }))}>
+                      <select className="pulse-input" value={form.category} onChange={e => setForm(p => ({ ...p, category: e.target.value }))}>
                         {CATEGORIES.map(c => <option key={c}>{c}</option>)}
                       </select>
                     </div>
                     <div>
                       <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>Priority</label>
-                      <select className="gflix-input" value={form.priority} onChange={e => setForm(p => ({ ...p, priority: e.target.value }))}>
+                      <select className="pulse-input" value={form.priority} onChange={e => setForm(p => ({ ...p, priority: e.target.value }))}>
                         {PRIORITIES.map(p => <option key={p}>{p}</option>)}
                       </select>
                     </div>
                   </div>
                   <div>
                     <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>Description</label>
-                    <textarea className="gflix-input" placeholder="Describe your issue in detail..." value={form.description} onChange={e => setForm(p => ({ ...p, description: e.target.value }))} rows={5} style={{ resize: 'vertical' }} />
+                    <textarea className="pulse-input" placeholder="Describe your issue in detail..." value={form.description} onChange={e => setForm(p => ({ ...p, description: e.target.value }))} rows={5} style={{ resize: 'vertical' }} />
                   </div>
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => submitMutation.mutate()}
                     disabled={submitMutation.isPending || !profile?.id || !form.subject || !form.description}
-                    className="gflix-btn gflix-btn-red"
+                    className="pulse-btn pulse-btn-red"
                     style={{ width: '100%', fontSize: '1rem', marginTop: '0.5rem', opacity: (!profile?.id || !form.subject || !form.description) ? 0.5 : 1 }}
                   >
                     {submitMutation.isPending ? <Loader2 size={20} style={{ animation: 'spin 1s linear infinite' }} /> : null}

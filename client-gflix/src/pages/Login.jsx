@@ -71,7 +71,7 @@ export default function GflixLogin() {
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <input
               type="email"
-              className="gflix-input"
+              className="pulse-input"
               placeholder="Email address"
               value={form.username}
               onChange={e => setForm(p => ({ ...p, username: e.target.value }))}
@@ -81,7 +81,7 @@ export default function GflixLogin() {
             <div style={{ position: 'relative' }}>
               <input
                 type={showPass ? 'text' : 'password'}
-                className="gflix-input"
+                className="pulse-input"
                 placeholder="Password"
                 value={form.password}
                 onChange={e => setForm(p => ({ ...p, password: e.target.value }))}
@@ -97,7 +97,7 @@ export default function GflixLogin() {
               disabled={loading}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="gflix-btn gflix-btn-red"
+              className="pulse-btn pulse-btn-red"
               style={{ width: '100%', marginTop: '0.5rem' }}
             >
               {loading ? <Loader2 size={20} style={{ animation: 'spin 1s linear infinite' }} /> : null}

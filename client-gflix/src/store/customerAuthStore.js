@@ -33,7 +33,7 @@ const useCustomerAuthStore = create(
       getToken: () => get().accessToken,
     }),
     {
-      name: 'gflix-auth',
+      name: 'pulse-auth',
       partialize: (state) => ({
         accessToken: state.accessToken,
         customer: state.customer,

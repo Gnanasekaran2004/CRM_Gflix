@@ -42,7 +42,7 @@ export default function RequestAccess() {
           <p style={{ color: 'rgba(255,255,255,0.6)', marginBottom: '2rem', lineHeight: 1.7 }}>
             Your request is under review. Our team will process it and you'll receive your login credentials once approved.
           </p>
-          <button onClick={() => navigate('/login')} className="gflix-btn gflix-btn-red" style={{ padding: '0.875rem 3rem' }}>
+          <button onClick={() => navigate('/login')} className="pulse-btn pulse-btn-red" style={{ padding: '0.875rem 3rem' }}>
             Back to Sign In
           </button>
         </motion.div>
@@ -106,7 +106,7 @@ export default function RequestAccess() {
               <input
                 key={field}
                 type={type}
-                className="gflix-input"
+                className="pulse-input"
                 placeholder={placeholder}
                 value={form[field]}
                 onChange={e => setForm(p => ({ ...p, [field]: e.target.value }))}
@@ -119,7 +119,7 @@ export default function RequestAccess() {
               disabled={loading}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="gflix-btn gflix-btn-red"
+              className="pulse-btn pulse-btn-red"
               style={{ width: '100%', marginTop: '0.5rem', fontSize: '1.1rem' }}
             >
               {loading ? <Loader2 size={20} style={{ animation: 'spin 1s linear infinite' }} /> : null}

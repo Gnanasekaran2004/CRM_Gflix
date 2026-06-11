@@ -8,10 +8,10 @@
 		<version>3.2.5</version>
 		<relativePath/>
 	</parent>
-	<groupId>com.nexcrm</groupId>
-	<artifactId>nexcrm-backend</artifactId>
+	<groupId>com.pulsestream</groupId>
+	<artifactId>pulsestream-backend</artifactId>
 	<version>1.0.0</version>
-	<name>NexCRM Backend</name>
+	<name>PulseStream Backend</name>
 	<description>Production-ready CRM platform for streaming &amp; media businesses</description>
 
 	<properties>

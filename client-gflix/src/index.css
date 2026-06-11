@@ -21,7 +21,7 @@ body {
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 
 /* Form Inputs */
-.gflix-input {
+.pulse-input {
   width: 100%;
   background: rgba(255,255,255,0.07);
   border: 1px solid rgba(255,255,255,0.12);
@@ -34,10 +34,10 @@ body {
   transition: border-color 0.2s;
 }
 
-.gflix-input:focus { border-color: #e50914; }
-.gflix-input::placeholder { color: rgba(255,255,255,0.35); }
+.pulse-input:focus { border-color: #e50914; }
+.pulse-input::placeholder { color: rgba(255,255,255,0.35); }
 
-.gflix-btn {
+.pulse-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -52,24 +52,24 @@ body {
   font-family: inherit;
 }
 
-.gflix-btn-red {
+.pulse-btn-red {
   background: #e50914;
   color: #fff;
 }
 
-.gflix-btn-red:hover { background: #b81d24; transform: scale(1.02); }
+.pulse-btn-red:hover { background: #b81d24; transform: scale(1.02); }
 
-.gflix-btn-white {
+.pulse-btn-white {
   background: rgba(255,255,255,0.9);
   color: #141414;
 }
 
-.gflix-btn-white:hover { background: rgba(255,255,255,0.75); }
+.pulse-btn-white:hover { background: rgba(255,255,255,0.75); }
 
-.gflix-btn-ghost {
+.pulse-btn-ghost {
   background: rgba(255,255,255,0.12);
   color: #fff;
   border: 1px solid rgba(255,255,255,0.2);
 }
 
-.gflix-btn-ghost:hover { background: rgba(255,255,255,0.2); }
+.pulse-btn-ghost:hover { background: rgba(255,255,255,0.2); }

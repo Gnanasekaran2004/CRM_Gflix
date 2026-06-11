@@ -243,10 +243,10 @@ export default function Browse() {
               When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl.
             </p>
             <div style={{ display: 'flex', gap: '1rem' }}>
-              <button className="gflix-btn gflix-btn-white" style={{ fontSize: '1rem', padding: '0.75rem 2rem' }}>
+              <button className="pulse-btn pulse-btn-white" style={{ fontSize: '1rem', padding: '0.75rem 2rem' }}>
                 <Play size={20} fill="currentColor" /> Play
               </button>
-              <button className="gflix-btn gflix-btn-ghost" style={{ fontSize: '1rem', padding: '0.75rem 2rem' }}>
+              <button className="pulse-btn pulse-btn-ghost" style={{ fontSize: '1rem', padding: '0.75rem 2rem' }}>
                 <Info size={20} /> More Info
               </button>
             </div>
@@ -259,7 +259,7 @@ export default function Browse() {
           <div style={{ fontSize: '4rem' }}>🔒</div>
           <h2 style={{ fontSize: '1.75rem', fontWeight: 800, color: 'rgba(255,255,255,0.6)' }}>Subscription Expired</h2>
           <p style={{ color: 'rgba(255,255,255,0.4)', textAlign: 'center', maxWidth: 400 }}>Your subscription has been cancelled. Contact support to reactivate your account and regain full access.</p>
-          <Link to="/support" className="gflix-btn gflix-btn-red" style={{ marginTop: '0.5rem' }}>
+          <Link to="/support" className="pulse-btn pulse-btn-red" style={{ marginTop: '0.5rem' }}>
             Contact Support
           </Link>
         </div>
